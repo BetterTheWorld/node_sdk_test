@@ -1,4 +1,4 @@
-import ShopCloud from '@flipgive/shopcloud';
+import Rewards from '@flipgive/rewards';
 
 let rewards_id = ""
 let rewards_secret = ""
@@ -28,9 +28,7 @@ let payload = {
   "group_data": group_data
 }
 
-console.log(payload)
-
-ShopCloud(id, rewards_secret).then(shopCloud => {
-  console.log(shopCloud.validIdentified(payload));
-  shopCloud.identifiedToken(payload).then(token => { console.log(token) });
+Rewards(id, rewards_secret).then(rewards => {
+  console.log(rewards.validIdentified(payload));
+  rewards.identifiedToken(payload).then(token => { console.log(token) });
 });
